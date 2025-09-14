@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController // 这个注解表明这个类是一个控制器，并且它的所有方法返回的数据都会直接写入HTTP响应体，而不是跳转到视图。
-public class LoginController {
+public class  LoginController {
 
     // 定义一个简单的用户数据库（模拟！正式项目绝对不能这样！）
     // key: username, value: password
