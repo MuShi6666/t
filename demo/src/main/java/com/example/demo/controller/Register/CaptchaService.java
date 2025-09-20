@@ -9,7 +9,7 @@ import java.util.UUID;
 public class CaptchaService {
 
     // 存储验证码和对应的UUID
-    private Map<String, String> captchaStore = new HashMap<>();
+    private final Map<String, String> captchaStore = new HashMap<>();
 
     // 验证码字符集
     private static final String CHAR_SET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

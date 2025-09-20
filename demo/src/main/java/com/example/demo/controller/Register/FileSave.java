@@ -6,6 +6,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -13,7 +14,7 @@ import java.util.Optional;
     public class FileSave {
 
         private static final String USER_DATA_FILE = "users.dat";
-        private List<User> users = new ArrayList<>();
+        private final List<User> users = new ArrayList<>();
         private final ObjectMapper objectMapper = new ObjectMapper();
 
         /**
@@ -33,9 +34,7 @@ import java.util.Optional;
                     byte[] jsonData = Files.readAllBytes(Paths.get(USER_DATA_FILE));
                     User[] userArray = objectMapper.readValue(jsonData, User[].class);
                     users.clear();
-                    for (User user : userArray) {
-                        users.add(user);
-                    }
+                    Collections.addAll(users, userArray);
                     System.out.println("已加载 " + users.size() + " 个用户数据");
                 }
             } catch (IOException e) {
