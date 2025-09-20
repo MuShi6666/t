@@ -25,7 +25,7 @@ public class LoginController {
     @PostMapping("/login") // 这个注解表示该方法处理POST请求，且请求路径是 "/login"
     public Map<String, Object> login(@RequestParam String username,
                                      @RequestParam String password) {
-
+//        // 假设这里是业务逻辑代码，省略掉了
         Map<String, Object> result = new HashMap<>();
 
         // 1. 检查用户是否存在
